@@ -55,9 +55,29 @@ class TodoListViewController: UITableViewController {
         cell.titleLabel.text = todo?.title
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete,
+            let todo = self.fetchedResultsController.fetchedObjects?[indexPath.row],
+            let id = todo.id else {
+            return
+        }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let newMoc = appDelegate.persistentContainer.newBackgroundContext()
+        let fetchRequest = NSFetchRequest<Todo>(entityName: "Todo")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        do {
+            guard let objectInNewMoc = try newMoc.fetch(fetchRequest).first else {
+                return
+            }
+            newMoc.delete(objectInNewMoc)
+            try newMoc.save()
+        } catch let error {
+            print(error)
+        }
+    }
 }
 
-@objc
 extension TodoListViewController: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView.beginUpdates()
