@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,7 +33,13 @@
                             <outlet property="delegate" destination="PgJ-c8-axw" id="3CG-YX-l7A"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todos" id="pSF-Pr-AIb"/>
+                    <navigationItem key="navigationItem" title="Todos" id="pSF-Pr-AIb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kIX-9c-Dx1">
+                            <connections>
+                                <segue destination="AR1-an-0ml" kind="show" id="cTo-bb-xCE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swO-c6-3hr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,6 +62,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQs-Vr-cxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="124" y="685.90704647676171"/>
+        </scene>
+        <!--Add Todo-->
+        <scene sceneID="yFt-jo-o4R">
+            <objects>
+                <viewController id="AR1-an-0ml" customClass="AddTodoViewController" customModule="todoWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y47-2g-FM6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RPa-fZ-Kpo">
+                                <rect key="frame" x="8" y="128" width="359" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zNJ-hC-057">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="60"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="dHZ-0r-H8f"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RPa-fZ-Kpo" firstAttribute="leading" secondItem="eqc-l9-rkS" secondAttribute="leading" constant="8" id="NGu-Mg-1nF"/>
+                            <constraint firstItem="RPa-fZ-Kpo" firstAttribute="top" secondItem="eqc-l9-rkS" secondAttribute="top" constant="64" id="eTR-jE-JmG"/>
+                            <constraint firstItem="eqc-l9-rkS" firstAttribute="trailing" secondItem="RPa-fZ-Kpo" secondAttribute="trailing" constant="8" id="hmk-uw-9wi"/>
+                            <constraint firstItem="RPa-fZ-Kpo" firstAttribute="centerX" secondItem="Y47-2g-FM6" secondAttribute="centerX" id="k96-CS-K1G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eqc-l9-rkS"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Todo" id="54K-4H-XJs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="FRk-nQ-uXP">
+                            <connections>
+                                <action selector="doneTapped:" destination="AR1-an-0ml" id="gh3-nr-Jn0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="titleTextField" destination="zNJ-hC-057" id="Rd4-aP-jQM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gA7-oB-DZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2008.8" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>

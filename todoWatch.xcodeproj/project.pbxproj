@@ -18,6 +18,7 @@
 		E04EC8C821BEE12000CAC8E0 /* TodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04EC8C621BEE12000CAC8E0 /* TodoTableViewCell.xib */; };
 		E04EC8CB21BEE1E400CAC8E0 /* Todo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04EC8C921BEE1E400CAC8E0 /* Todo+CoreDataClass.swift */; };
 		E04EC8CC21BEE1E400CAC8E0 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04EC8CA21BEE1E400CAC8E0 /* Todo+CoreDataProperties.swift */; };
+		E04EC8CE21BEE4DC00CAC8E0 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04EC8CD21BEE4DC00CAC8E0 /* AddTodoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		E04EC8C621BEE12000CAC8E0 /* TodoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableViewCell.xib; sourceTree = "<group>"; };
 		E04EC8C921BEE1E400CAC8E0 /* Todo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E04EC8CA21BEE1E400CAC8E0 /* Todo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E04EC8CD21BEE4DC00CAC8E0 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				E04EC8CA21BEE1E400CAC8E0 /* Todo+CoreDataProperties.swift */,
 				E04EC8A221BEDFE100CAC8E0 /* AppDelegate.swift */,
 				E04EC8A421BEDFE100CAC8E0 /* TodoListViewController.swift */,
+				E04EC8CD21BEE4DC00CAC8E0 /* AddTodoViewController.swift */,
 				E04EC8A621BEDFE100CAC8E0 /* Main.storyboard */,
 				E04EC8AC21BEDFE400CAC8E0 /* Assets.xcassets */,
 				E04EC8AE21BEDFE400CAC8E0 /* LaunchScreen.storyboard */,
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E04EC8A521BEDFE100CAC8E0 /* TodoListViewController.swift in Sources */,
+				E04EC8CE21BEE4DC00CAC8E0 /* AddTodoViewController.swift in Sources */,
 				E04EC8AB21BEDFE100CAC8E0 /* todoWatch.xcdatamodeld in Sources */,
 				E04EC8A321BEDFE100CAC8E0 /* AppDelegate.swift in Sources */,
 				E04EC8CB21BEE1E400CAC8E0 /* Todo+CoreDataClass.swift in Sources */,
