@@ -35,10 +35,18 @@ class TodoListViewController: UITableViewController {
         self.fetchedResultsController.delegate = self
     }
 
+    func updateWatchData() {
+        let allTodoTitles: [String] = Todo.getSortedTodoTitles()
+        let context: [String: [String]] = ["Todos": allTodoTitles ]
+        WatchSessionManager.shared.update(context: context)
+    }
+
     @objc func fetchData() {
         do {
             self.refreshControl?.beginRefreshing()
             try self.fetchedResultsController.performFetch()
+
+            self.updateWatchData()
         } catch let error {
             print(error)
         }
@@ -75,6 +83,7 @@ class TodoListViewController: UITableViewController {
         } catch let error {
             print(error)
         }
+        self.updateWatchData()
     }
 }
 
@@ -99,5 +108,6 @@ extension TodoListViewController: NSFetchedResultsControllerDelegate {
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView.endUpdates()
+        self.updateWatchData()
     }
 }
